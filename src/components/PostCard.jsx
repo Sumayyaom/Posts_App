@@ -15,7 +15,7 @@ const PostCard = ({ post, isDummy, onEdit }) => {
       <div className="card-body">
         <h5 className="card-title">{post.title}</h5>
         <p className="card-text">{post.body.slice(0, 100)}...</p>
-        <Link to={`/posts/${post.id}`} className="btn btn-primary me-2">Read More</Link>
+        {!isDummy && <Link to={`/posts/${post.id}`} className="btn btn-primary me-2">Read More</Link>}
         {isDummy && (
           <button onClick={() => setEditing(true)} className="btn btn-secondary">
             Edit

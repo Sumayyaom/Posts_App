@@ -11,7 +11,8 @@ const Home = () => {
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts?_limit=20')
-        .then(res => setPosts(res.data));
+        .then(res => setPosts(res.data))
+        .catch(error => console.error('Error fetching posts:' ,error));
     },[]);
 
   const addNewPost = (post) => {
